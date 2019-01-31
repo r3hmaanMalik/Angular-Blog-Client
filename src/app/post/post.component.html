@@ -1,0 +1,8 @@
+<h2>Post</h2>
+<div [formGroup]="postForm" (ngSubmit)="onSubmit()">
+<div [froalaEditor] formControlName="message" >Hello, Froala!</div>
+<button type="submit">Submit</button>
+</div>
+
+
+<!-- <div [froalaEditor]="options" #froalaEditor  formControlName="message" required >Hello, Froala!</div> -->

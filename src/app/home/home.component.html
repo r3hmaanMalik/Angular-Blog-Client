@@ -1,0 +1,48 @@
+﻿<!-- <h1>Hi {{currentUser.firstName}}!</h1>
+<p>You're logged in with Angular 7!!</p>
+<h3>All registered users:</h3>
+<ul>
+    <li *ngFor="let user of users">
+        {{user.username}} ({{user.firstName}} {{user.lastName}})
+        - <a (click)="deleteUser(user.id)" class="text-danger">Subscribe</a>
+    </li>
+
+    <li *ngFor="let blog of blogs">
+        {{blog.content}} - <a (click)="deleteUser(blog.id)" class="text-danger">View</a>
+    </li>
+</ul> -->
+
+
+
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+  <!-- The Grid -->
+  <div class="w3-row">
+    <!-- Left Column -->
+    <div class="w3-col m3">
+      <!-- Profile -->
+      <app-profile-widget></app-profile-widget>
+      <br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Middle Column -->
+    <div class="w3-col m7">
+
+      <div class="w3-row-padding">
+        <app-post-me-widget></app-post-me-widget>
+      </div>
+
+      <app-allblog-wigdet></app-allblog-wigdet>
+
+    <!-- End Middle Column -->
+    </div>
+
+  
+
+  <!-- End Grid -->
+  </div>
+
+<!-- End Page Container -->
+</div>
+<br>

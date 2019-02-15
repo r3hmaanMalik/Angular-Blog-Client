@@ -9,6 +9,7 @@ import { AlertService, AuthenticationService } from '@/_services';
 
 @Component({templateUrl: 'post.component.html'})
 export class PostComponent implements OnInit {
+    jar: string;
     postForm: FormGroup;
     loading = false;
     submitted = false;
@@ -31,19 +32,20 @@ export class PostComponent implements OnInit {
 
     createForm() {
    this.postForm = this.formBuilder.group({
-    message: ['Ty  ']
+    message: ['Tyooooooo']
 
   });
 
 
 }
 
+get f() { return this.postForm.controls};
     // convenience getter for easy access to form fields
 
     onSubmit() {
-       console.warn(this.postForm.get('message'));
+     this.jar = this.f.message.value;
+      console.log(this.jar);
     }
 
-get name() { return this.postForm.get('message'); }
 
 }

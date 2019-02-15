@@ -27,8 +27,15 @@ export class UserService {
     delete(id: number) {
         return this.http.delete(`${config.apiUrl}/users/${id}`);
     }
-
+    
+    deleteBlog(id: number) {
+        return this.http.delete(`${config.apiUrl}/users/${id}`);
+    }
     getAllBlogs(user: User) {
         return this.http.post<Blog[]>(`${config.apiUrl}/users/getAllBlogs`,user);
+    }
+
+    postBlog(blog: Blog) {
+        return this.http.post<Blog[]>(`${config.apiUrl}/users/newblog`,blog);
     }
 }

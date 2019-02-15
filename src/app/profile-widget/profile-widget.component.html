@@ -1,20 +1,43 @@
 <div class="w3-card w3-round w3-white">
   <div class="w3-container">
+    <li *ngFor="let user of users">
+        {{user.username}} ({{user.firstName}} {{user.lastName}})
+        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+    </li>
    <h4 class="w3-center">My Profile</h4>
-   <!-- <p class="w3-center"><img src="/w3images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p> -->
+   <p class="w3-center"><img src="https://www.ucp.edu.pk/static/uploads/2017/07/Saeed-Iqbal-Khattak.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
    <hr>
-   <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
-   <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
-   <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
+   <p ><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i>{{currentUser.firstName}}</p>
+   <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>{{currentUser.lastName}}</p>
   </div>
 </div>
 <br>
 <div class="w3-card w3-round">
   <div class="w3-white">
     <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Friends</button>
-    <div id="Demo1" class="w3-hide w3-container">
-      <p>Some text..</p>
 
+    <div id="Demo1" class="w3-hide w3-container">
+        <hr/>
+        <p *ngFor="let friend of currentUser.friends">
+          <i class="fa fa-user fa-fw w3-margin-right w3-text-theme"></i>{{friend.id}}</p>
+    </div>
+  </div>
+</div>
+<hr/>
+
+<div class="w3-card w3-round">
+  <div class="w3-white">
+    <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>Search</button>
+
+    <div id="Demo2" class="w3-hide w3-container">
+      <hr/>
+        <p *ngFor="let user of users">
+
+          <a (click)="updateUser(user.id)" class="w3-button w3-block w3-theme-l1 w3-left-align">
+          <i class="fa fa-plus fa-fw w3-margin-right w3-text-theme"></i>{{user.firstName}}
+          </a>
+
+          </p>
     </div>
   </div>
 </div>

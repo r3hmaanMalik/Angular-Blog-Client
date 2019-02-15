@@ -1,9 +1,59 @@
-<h1>Hi {{currentUser.firstName}}!</h1>
+<!-- <h1>Hi {{currentUser.firstName}}!</h1>
 <p>You're logged in!!</p>
 <h3>All registered users:</h3>
 <ul>
     <li *ngFor="let user of users">
         {{user.username}} ({{user.firstName}} {{user.lastName}})
-        - <a (click)="deleteUser(user.id)" class="text-danger">Subscribe</a>
+        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
     </li>
 </ul>
+<h3>All registered users:</h3>
+<ul>
+
+  <li *ngFor="let blog of blogs">
+      {{blog.author}} ({{blog.content}})
+      - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+  </li>
+</ul> -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">All Users</h1>
+    <table class="table table-bordered table-hover  table-dark">
+      <thead>
+        <tr>
+          <th scope="col">User Name</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users" >
+          <td>{{user.username}}</td>
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
+          <td><button (click)="deleteUser(user.id)" type="button" name="button" class="btn ">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="container">
+    <h1 class="display-4">All Blogs</h1>
+    <table class="table table-bordered table-hover  table-dark">
+      <thead>
+        <tr>
+          <th scope="col">User Name</th>
+
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let blog of blogs" >
+          <td>{{blog.content}}</td>
+
+          <td><button type="button" name="button" class="btn ">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,4 +1,6 @@
 ﻿export class Blog {
-    author: number;
+    author: string;
+    title: string;
     content: string;
+
 }
